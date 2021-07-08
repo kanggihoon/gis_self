@@ -2,23 +2,15 @@
 
 {% block content %}
 
-    <style>
-        .testing{
-            background-color: yellow;
-            margin: 1rem;
-            height: 48px;
-            width: 40px;
-            border-radius: .5rem;
-            overflow: scroll;
-        }
-    </style>
+    <div style="margin: 2rem; text-align: center">
+        <h1>METHOD</h1>
 
-    <div style="height: 20rem; background-color: aqua; margin: 2rem; border-radius: 1rem; font-size: 2rem">
-        <h1>아야아야아야아야아야아야아야아야아야아야아야</h1>
-    <div class="testing" style="height: 48px; width: 48px">px</div>
-    <div class="testing" style="height: 3rem; width: 3rem">rem</div>
-    <div class="testing" style="height: 3em; width: 3em">em</div>
-    <div class="testing" style="height: 30%; width: 30%">%</div>
+        <form action="/account/hello_world/" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-dark rounded-pill">
+        </form>
+
+        <h3>{{ text }}</h3>
     </div>
 
 {% endblock %}
